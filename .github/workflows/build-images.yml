@@ -1,0 +1,105 @@
+name: Build docker images
+on:
+  push: {}
+
+jobs:
+  prepare-matrix:
+    name: Prepare matrix of chained images
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - id: set-matrix
+        run: |
+          REF=${{ github.ref }}
+          MATRIX=.github/workflows/matrix-include.json
+          matrix=$(\
+            jq --arg ref $REF \
+              '.chained | map(
+                . | ."git-tag-prefix" as $prefix | select(
+                  ($ref | startswith("refs/tags/") | not)
+                  or ($ref | startswith($prefix))
+                )
+              )'\
+            $MATRIX\
+          )
+          echo ::set-output name=matrix::{\"include\":$(echo $matrix)}\"
+
+
+  build-chained-images:
+    name: >-
+      Build "${{matrix.target-project}}"${{
+        (matrix.base-image-tag || matrix.base-image-full) && format(' of "{0}"', matrix.base-image-tag || matrix.base-image-full)
+        || ''
+      }}"
+    needs: prepare-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.prepare-matrix.outputs.matrix)}}
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Show docker and docker-compose versions
+        run: |
+          docker --version
+          docker-compose --version
+
+      - name: Calculate environments
+        run: |
+          cat ./docker/image-pieces/ci.env >> $GITHUB_ENV
+          echo IMAGE_REPO=docker.pkg.github.com/$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
+          echo IMAGE_TAG=$(./.github/workflows/docker-tag.sh ${{ github.ref }}) >> $GITHUB_ENV
+          echo IMAGE_PUSH=${{ startsWith(github.ref, 'refs/tags/') }} >> $GITHUB_ENV
+          cat $GITHUB_ENV
+
+      - name: Calculate image full name
+        run: |
+          if [[ -n "${{matrix.base-image-tag}}" ]]; then
+            BASE_TAG=${{matrix.base-image-tag}}
+            IMAGE_TAG_PREFIX=${BASE_TAG}-
+          else
+            BASE_TAG=latest
+            IMAGE_TAG_PREFIX=""
+          fi
+
+          BASE_FULL=${{matrix.base-image-full||env.ALPINE_IMAGE}}
+          BASE_NAME=${{matrix.base-image-name||env.DEFAULT_IMAGE_NAME}}
+          TARGET_NAME=${{matrix.target-image-name||env.DEFAULT_IMAGE_NAME}}
+
+          if [[ -n "${{matrix.base-image-tag}}${{matrix.base-image-name}}" ]]; then
+            echo BASE_IMAGE=${{env.IMAGE_REPO}}/${BASE_NAME}:${BASE_TAG} >> $GITHUB_ENV
+          else
+            echo BASE_IMAGE=$BASE_FULL >> $GITHUB_ENV
+          fi
+
+          echo IMAGE=${{env.IMAGE_REPO}}/${TARGET_NAME}:${IMAGE_TAG_PREFIX}${{matrix.target-project}}-${{env.IMAGE_TAG}} >> $GITHUB_ENV
+
+          cat $GITHUB_ENV
+
+      - name: Login to GitHub Packages Docker Registry
+        run: |
+          docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build ${{matrix.target-project}} image ${{env.IMAGE}}
+        run: |
+          docker build \
+              --rm \
+              -f docker/image-pieces/${{matrix.target-project}}/Dockerfile \
+              -t $IMAGE \
+              --build-arg BASE_IMAGE=$BASE_IMAGE \
+              docker/image-pieces/${{matrix.target-project}}
+
+      - name: Show layers of ${{env.IMAGE}}
+        run: |
+          docker history --no-trunc $IMAGE
+
+      - name: Push ${{matrix.target-project}} image ${{env.IMAGE}}
+        if: ${{ env.IMAGE_PUSH == 'true' }}
+        run: |
+          docker push $IMAGE
+
+
