@@ -56,6 +56,11 @@ JVM without JDK. Useful for prod images.
 
 Are useful to develop NPM projects and run tests in browser.
 
+#### "npm" and "npm-devtools"
+
+Are useful to develop NPM projects when in-browser testing is not configured
+yet.
+
 #### nodejs
 
 Is useful to run JS projects.

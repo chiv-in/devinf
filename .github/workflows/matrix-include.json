@@ -1,5 +1,9 @@
 {
   "chained" : [{
+    "git-tag-prefix": "refs/tags/docker/npm-devtools/",
+    "base-image-tag": "npm-00",
+    "target-project": "devtools"
+  }, {
     "git-tag-prefix": "refs/tags/docker/chromium-npm/",
     "base-image-tag": "chromium-00",
     "target-project": "npm"
@@ -31,5 +35,8 @@
   }, {
     "git-tag-prefix": "refs/tags/docker/nodejs/",
     "target-project": "nodejs"
+  }, {
+    "git-tag-prefix": "refs/tags/docker/npm/",
+    "target-project": "npm"
   }]
 }
