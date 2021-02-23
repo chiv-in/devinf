@@ -34,7 +34,7 @@ jobs:
       Build "${{matrix.target-project}}"${{
         (matrix.base-image-tag || matrix.base-image-full) && format(' of "{0}"', matrix.base-image-tag || matrix.base-image-full)
         || ''
-      }}"
+      }}
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
