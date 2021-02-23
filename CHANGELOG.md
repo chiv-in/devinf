@@ -10,6 +10,17 @@ It has following packages installed:
 * ca-certificates
 * dumb-init
 
+#### docker/npm-devtools/00
+
+Based on `npm-00`.
+
+Installed packages:
+
+* sudo (1.9.5p2-r0)
+* bash (5.0.17-r0)
+* rsync (3.1.3-r3)
+* git (2.26.2-r0)
+* jq (1.6-r1)
 
 #### docker/chromium-npm-jdk11mvn-devtools/00
 
@@ -51,6 +62,13 @@ Installed packages:
 #### docker/chromium-npm/00
 
 Based on `chromium-00`.
+
+Installed packages:
+
+* nodejs (12.20.1-r0)
+* npm (12.20.1-r0)
+
+#### docker/npm/00
 
 Installed packages:
 
