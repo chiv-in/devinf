@@ -1,14 +1,14 @@
 # Development infrastructure
 
+
 ## Docker
 
-### Chained images
+### Image pieces
 
 There are tiny picese of images which I use trying to build combinations to
 download less.
 I'm trying to put big and rarely changed layers closer to base
 to have those laysers downloaded as rarely as possible to save time and network traffic.
-
 
 #### Base
 
@@ -18,7 +18,7 @@ That configures `app` user and enforces non-root execution by default.
 
 #### Dev Tools
 
-| | |
+| [devtools](docker/image-pieces/devtools/Dockerfile) | |
 | --- | --- |
 | **extracted** | 20 MB |
 | **compressed** | 10 MB |
@@ -32,7 +32,7 @@ that's why I put the image closer to end.
 
 #### Chromium
 
-| | |
+| [chromium](docker/image-pieces/chromium/Dockerfile) | |
 | --- | --- |
 | **extracted** | 416 MB |
 | **compressed** | 174 MB |
@@ -46,7 +46,7 @@ I'm going to update this image as rarely as possible.
 
 #### NodeJS
 
-| | |
+| [nodejs](docker/image-pieces/nodejs/Dockerfile) | |
 | --- | --- |
 | **extracted** | 33 MB |
 | **compressed** | 12 MB |
@@ -55,7 +55,7 @@ NodeJS without NPM. Useful for prod images.
 
 #### NPM
 
-| | |
+| [npm](docker/image-pieces/npm/Dockerfile) | |
 | --- | --- |
 | **extracted** | 46 MB |
 | **compressed** | 17 MB |
@@ -66,7 +66,7 @@ But it's not very big, that's why it gives the road to Chromium or Java.
 
 #### Open JDK 11 + Maven
 
-| | |
+| [jdk11mvn](docker/image-pieces/jdk11mvn/Dockerfile) | |
 | --- | --- |
 | **extracted** | 280 MB |
 | **compressed** | 136 MB |
@@ -75,38 +75,56 @@ JDK + Maven. Useful in Java projects
 
 #### JVM: Open JDK 11
 
-| | |
+| [jvm11](docker/image-pieces/jvm11/Dockerfile) | |
 | --- | --- |
 | **extracted** | 177 MB |
 | **compressed** | 63 MB |
 
 JVM without JDK. Useful for prod images.
 
+
+
 ### Result images
 
-#### "chromium-npm" and "chromium-npm-devtools"
+#### Chromium + NPM
 
-Are useful to develop NPM projects and run tests in browser.
+[chromium-npm](https://github.com/chiv-in/devinf/packages/635370?version=chromium-00-npm-00) and [chromium-npm-devtools](https://github.com/chiv-in/devinf/packages/635370?version=chromium-00-npm-00-devtools-00)
+are useful to develop NPM projects and run tests in browser.
 
-#### "npm" and "npm-devtools"
+#### NPM
 
-Are useful to develop NPM projects when in-browser testing is not configured
+[npm](https://github.com/chiv-in/devinf/packages/635370?version=npm-00) and [npm-devtools](https://github.com/chiv-in/devinf/packages/635370?version=npm-00-devtools-00)
+are useful to develop NPM projects when in-browser testing is not configured
 yet.
 
 #### nodejs
 
-Is useful to run JS projects.
+[nodejs](https://github.com/chiv-in/devinf/packages/635370?version=nodejs-00)
+is useful to run JS projects.
 
-#### jvm11
+#### JVM
 
-Is useful to run Java projects.
+[jvm11](https://github.com/chiv-in/devinf/packages/635370?version=jvm11-00)
+is useful to run Java projects.
 
-#### "jdk11mvn" and "jdk11mvn-devtools"
+#### JDK + Maven
 
-Are useful to develop Java projects and run tests.
+[jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-00) <!-- and [jdk11mvn-devtools]() are -->
+is useful to develop Java projects and run tests.
 
 
-#### "chromium-npm-jdk11mvn" and "chromium-npm-jdk11mvn-devtools"
+#### Chromium + NPM + JDK + Maven
 
-Are useful to develop Java projects which have frontent part that is built with NPM.
+[chromium-npm-jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=chromium-00-npm-00-jdk11mvn-00) and [chromium-npm-jdk11mvn-devtools](https://github.com/chiv-in/devinf/packages/635370?version=chromium-00-npm-00-jdk11mvn-00-devtools-00)
+are useful to develop Java projects which have frontent part that is built with NPM.
 
+
+
+### Image tags
+
+You can see weird docker tags like: `chromium-00-npm-00-jdk11mvn-00-devtools-00`.
+The last number is meaningful, that means it relates to git tag [docker/chromium-npm-jdk11mvn-devtools-00](https://github.com/chiv-in/devinf/releases/tag/docker%2Fchromium-npm-jdk11mvn-devtools%2F00)
+
+The beginning part reflects the base image, in this particular example it means
+that image was based on `chromium-00-npm-00-jdk11mvn-00` that relates to git tag
+[docker/chromium-npm-jdk11mvn-00](https://github.com/chiv-in/devinf/releases/tag/docker%2Fchromium-npm-jdk11mvn%2F00)
