@@ -11,7 +11,7 @@ It has following packages installed:
 * dumb-init
 
 #### [docker/jdk11mvn-devtools/00]
-_(2021-02-23)_
+_(2021-02-25)_
 
 Image [jdk11mvn-00-devtools-00].
 
@@ -159,6 +159,10 @@ Installed packages:
 
 
 ------------
+
+[jdk11mvn-00-devtools-00]: https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-00-devtools-00
+[docker/jdk11mvn-devtools/00]: https://github.com/chiv-in/devinf/tree/docker/jdk11mvn-devtools%2F00
+
 
 [npm-00-devtools-00]: https://github.com/chiv-in/devinf/packages/635370?version=npm-00-devtools-00
 [docker/npm-devtools/00]: https://github.com/chiv-in/devinf/tree/docker/npm-devtools%2F00
