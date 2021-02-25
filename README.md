@@ -109,8 +109,8 @@ is useful to run Java projects.
 
 #### JDK + Maven
 
-[jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-00) <!-- and [jdk11mvn-devtools]() are -->
-is useful to develop Java projects and run tests.
+[jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-00) and [jdk11mvn-devtools](https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-00-devtools-00)
+are useful to develop Java projects and run tests.
 
 
 #### Chromium + NPM + JDK + Maven

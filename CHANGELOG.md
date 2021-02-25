@@ -10,6 +10,22 @@ It has following packages installed:
 * ca-certificates
 * dumb-init
 
+#### [docker/jdk11mvn-devtools/00]
+_(2021-02-23)_
+
+Image [jdk11mvn-00-devtools-00].
+
+Based on [jdk11mvn-00](#dockerjdk11mvn00).
+
+Installed packages:
+
+* sudo (1.9.5p2-r0)
+* bash (5.0.17-r0)
+* rsync (3.1.3-r3)
+* git (2.26.2-r0)
+* jq (1.6-r1)
+
+
 #### [docker/npm-devtools/00]
 _(2021-02-23)_
 

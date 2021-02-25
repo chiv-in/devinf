@@ -19,6 +19,10 @@
     "git-tag-prefix": "refs/tags/docker/chromium-npm-jdk11mvn-devtools/",
     "base-image-tag": "chromium-00-npm-00-jdk11mvn-00",
     "target-project": "devtools"
+  }, {
+    "git-tag-prefix": "refs/tags/docker/jdk11mvn-devtools/",
+    "base-image-tag": "jdk11mvn-00",
+    "target-project": "devtools"
   },
 
 
