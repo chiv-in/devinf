@@ -34,8 +34,8 @@ that's why I put the image closer to end.
 
 | [chromium](docker/image-pieces/chromium/Dockerfile) | |
 | --- | --- |
-| **extracted** | 416 MB |
-| **compressed** | 174 MB |
+| **extracted** | 421 MB |
+| **compressed** | 175 MB |
 
 
 Chromium with some necessary dependencies and fonts.
@@ -48,8 +48,8 @@ I'm going to update this image as rarely as possible.
 
 | [nodejs](docker/image-pieces/nodejs/Dockerfile) | |
 | --- | --- |
-| **extracted** | 33 MB |
-| **compressed** | 12 MB |
+| **extracted** | 38 MB |
+| **compressed** | 15 MB |
 
 NodeJS without NPM. Useful for prod images.
 
@@ -57,8 +57,8 @@ NodeJS without NPM. Useful for prod images.
 
 | [npm](docker/image-pieces/npm/Dockerfile) | |
 | --- | --- |
-| **extracted** | 46 MB |
-| **compressed** | 17 MB |
+| **extracted** | 54 MB |
+| **compressed** | 19 MB |
 
 NPM. I suppose it's rarely changed so it's good to keep it closer to the beginning
 But it's not very big, that's why it gives the road to Chromium or Java.
@@ -88,34 +88,34 @@ JVM without JDK. Useful for prod images.
 
 #### Chromium + NPM
 
-[chromium-npm](https://github.com/chiv-in/devinf/packages/635370?version=chromium-00-npm-00) and [chromium-npm-devtools](https://github.com/chiv-in/devinf/packages/635370?version=chromium-00-npm-00-devtools-00)
+[chromium-npm](https://github.com/chiv-in/devinf/packages/635370?version=chromium-01-npm-01) and [chromium-npm-devtools](https://github.com/chiv-in/devinf/packages/635370?version=chromium-01-npm-01-devtools-01)
 are useful to develop NPM projects and run tests in browser.
 
 #### NPM
 
-[npm](https://github.com/chiv-in/devinf/packages/635370?version=npm-00) and [npm-devtools](https://github.com/chiv-in/devinf/packages/635370?version=npm-00-devtools-00)
+[npm](https://github.com/chiv-in/devinf/packages/635370?version=npm-01) and [npm-devtools](https://github.com/chiv-in/devinf/packages/635370?version=npm-01-devtools-01)
 are useful to develop NPM projects when in-browser testing is not configured
 yet.
 
 #### nodejs
 
-[nodejs](https://github.com/chiv-in/devinf/packages/635370?version=nodejs-00)
+[nodejs](https://github.com/chiv-in/devinf/packages/635370?version=nodejs-01)
 is useful to run JS projects.
 
 #### JVM
 
-[jvm11](https://github.com/chiv-in/devinf/packages/635370?version=jvm11-00)
+[jvm11](https://github.com/chiv-in/devinf/packages/635370?version=jvm11-01)
 is useful to run Java projects.
 
 #### JDK + Maven
 
-[jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-00) and [jdk11mvn-devtools](https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-00-devtools-00)
+[jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-01) and [jdk11mvn-devtools](https://github.com/chiv-in/devinf/packages/635370?version=jdk11mvn-01-devtools-01)
 are useful to develop Java projects and run tests.
 
 
 #### Chromium + NPM + JDK + Maven
 
-[chromium-npm-jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=chromium-00-npm-00-jdk11mvn-00) and [chromium-npm-jdk11mvn-devtools](https://github.com/chiv-in/devinf/packages/635370?version=chromium-00-npm-00-jdk11mvn-00-devtools-00)
+[chromium-npm-jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=chromium-01-npm-01-jdk11mvn-01) and [chromium-npm-jdk11mvn-devtools](https://github.com/chiv-in/devinf/packages/635370?version=chromium-01-npm-01-jdk11mvn-01-devtools-01)
 are useful to develop Java projects which have frontent part that is built with NPM.
 
 
