@@ -1,27 +1,27 @@
 {
   "chained" : [{
     "git-tag-prefix": "refs/tags/docker/npm-devtools/",
-    "base-image-tag": "npm-00",
+    "base-image-tag": "npm-01",
     "target-project": "devtools"
   }, {
     "git-tag-prefix": "refs/tags/docker/chromium-npm/",
-    "base-image-tag": "chromium-00",
+    "base-image-tag": "chromium-01",
     "target-project": "npm"
   }, {
     "git-tag-prefix": "refs/tags/docker/chromium-npm-devtools/",
-    "base-image-tag": "chromium-00-npm-00",
+    "base-image-tag": "chromium-01-npm-01",
     "target-project": "devtools"
   }, {
     "git-tag-prefix": "refs/tags/docker/chromium-npm-jdk11mvn/",
-    "base-image-tag": "chromium-00-npm-00",
+    "base-image-tag": "chromium-01-npm-01",
     "target-project": "jdk11mvn"
   }, {
     "git-tag-prefix": "refs/tags/docker/chromium-npm-jdk11mvn-devtools/",
-    "base-image-tag": "chromium-00-npm-00-jdk11mvn-00",
+    "base-image-tag": "chromium-01-npm-01-jdk11mvn-01",
     "target-project": "devtools"
   }, {
     "git-tag-prefix": "refs/tags/docker/jdk11mvn-devtools/",
-    "base-image-tag": "jdk11mvn-00",
+    "base-image-tag": "jdk11mvn-01",
     "target-project": "devtools"
   },
 
