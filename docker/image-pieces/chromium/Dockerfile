@@ -19,3 +19,7 @@ RUN \
         wqy-zenhei \
         && \
     rm -rf /var/cache/apk/*
+
+ENV \
+    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
