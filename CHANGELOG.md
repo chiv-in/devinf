@@ -1,3 +1,36 @@
+#### [docker/chromium/--]
+_(2021-07-04??)_
+
+Image [chromium-??].
+
+##### Added
+* chinese fonts support.
+* puppeteer related environment constants because the chromium piece is expected to be used with puppeeter.
+
+##### Changed
+* secure links to alpine registries are used on build
+
+Installed packages:
+
+* chromium (??)
+* font-noto (??)
+* font-noto-emoji (??)
+* freetype (??)
+* freetype-dev (??)
+* **wqy-zenhei (??)**
+* harfbuzz (??)
+* ttf-freefont (??)
+* nss (??)
+
+
+
+Unpublished is above
+
+----------------------------------
+
+
+
+
 ### Based on `umputun/baseimage/app:v1.7.0` (`alpine:3.13`)
 The images below are based on [ghcr.io/umputun/baseimage/app:v1.7.0](https://github.com/umputun/baseimage/pkgs/container/baseimage%2Fapp/2357392) that is based on `alpine:3.13`.
 
