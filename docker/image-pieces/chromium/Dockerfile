@@ -10,12 +10,12 @@ RUN \
         chromium \
         && \
     apk add --no-cache --update \
-        --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
+        --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
         font-noto \
         font-noto-emoji \
         && \
     apk add --no-cache --update \
-        --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+        --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
         wqy-zenhei \
         && \
     rm -rf /var/cache/apk/*
