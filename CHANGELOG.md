@@ -1,7 +1,14 @@
 #### [docker/chromium/--]
-_(2021-07-04??)_
+_(2022-??-??)_
 
-Image [chromium-??].
+Image [??-??].
+
+
+Installed packages:
+
+* -- (??)
+* -- (??)
+
 
 Unpublished is above
 
@@ -12,12 +19,28 @@ The images below are based on [ghcr.io/umputun/baseimage/app:v1.9.2](https://git
 It has following packages installed:
 
 * su-exec (0.2-r1)
-* tzdata (2022a-r0)
-* curl (7.80.0-r1)
-* ca-certificates (20211220-r0)
-* dumb-init (1.2.5-r1)
+* tzdata (202**2a-r0**)
+* curl (7.**80.0-r1**)
+* ca-certificates (20**211220-r0**)
+* dumb-init (1.2.5-**r1**)
+
+
+#### [docker/chromium-npm/02]
+_(2022-07-08)_
+
+Image [chromium-02-npm-02].
+
+Based on [chromium-02](#dockerchromium02)
+
+Installed packages:
+
+* nodejs **(16.14.2-r0)**
+* npm **(8.1.3-r0)**
+* **yarn (1.22.17-r0)**
+
+
 #### [docker/chromium/02]
-_[(2022-07-08)][c-chromium-02]_
+_(2022-07-08)_
 
 Image [chromium-02].
 
@@ -30,24 +53,24 @@ Image [chromium-02].
 
 Installed packages:
 
-* chromium (??)
-* font-noto (??)
-* font-noto-emoji (??)
-* freetype (??)
-* freetype-dev (??)
-* **wqy-zenhei (??)**
-* harfbuzz (??)
-* ttf-freefont (??)
-* nss (??)
+* chromium **(99.0.4844.84-r0)**
+* font-noto (0_git20**211101-r5**)
+* font-noto-emoji **(2.034-r0)**
+* freetype (2.**11.1-r2**)
+* freetype-dev (2.**11.1-r2**)
+* **wqy-zenhei (0.9.45-r1)**
+* harfbuzz **(3.0.0-r2)**
+* ttf-freefont (20120503-r2)
+* nss (3.**78.1-r0**)
 
 
 
 ------------
 
-----------------------------------
+[chromium-02-npm-02]: https://github.com/chiv-in/devinf/pkgs/container/devinf%2Fdevinf2/27986680?tag=chromium-02-npm-02
+[docker/chromium-npm/02]: https://github.com/chiv-in/devinf/tree/docker/chromium-npm%2F02
 
-[c-chromium-02]: https://github.com/chiv-in/devinf/compare/chromium-01...chromium-02
-[chromium-02]: https://github.com/chiv-in/devinf/packages/635370?version=chromium-02
+[chromium-02]: https://github.com/chiv-in/devinf/pkgs/container/devinf%2Fdevinf2/27928337?tag=chromium-02
 [docker/chromium/02]: https://github.com/chiv-in/devinf/tree/docker/chromium%2F02
 
 
