@@ -13,7 +13,7 @@ to have those laysers downloaded as rarely as possible to save time and network 
 #### Base
 
 I don't have own base image.
-I use [docker.pkg.github.com/umputun/baseimage/app:v1.6.1](https://github.com/umputun/baseimage/tree/master/base.alpine).
+I use [docker.pkg.github.com/umputun/baseimage/app:v1.9.2](https://github.com/umputun/baseimage/tree/v1.9.2/base.alpine).
 That configures `app` user and enforces non-root execution by default.
 
 #### Dev Tools

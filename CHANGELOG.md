@@ -3,6 +3,24 @@ _(2021-07-04??)_
 
 Image [chromium-??].
 
+Unpublished is above
+
+----------------------------------
+### Based on `umputun/baseimage/app:v1.9.2` (`alpine:3.15`)
+The images below are based on [ghcr.io/umputun/baseimage/app:v1.9.2](https://github.com/umputun/baseimage/pkgs/container/baseimage%2Fapp/25360859?tag=v1.9.2) that is based on `alpine:3.15`.
+
+It has following packages installed:
+
+* su-exec (0.2-r1)
+* tzdata (2022a-r0)
+* curl (7.80.0-r1)
+* ca-certificates (20211220-r0)
+* dumb-init (1.2.5-r1)
+#### [docker/chromium/02]
+_[(2022-07-08)][c-chromium-02]_
+
+Image [chromium-02].
+
 ##### Added
 * chinese fonts support.
 * puppeteer related environment constants because the chromium piece is expected to be used with puppeeter.
@@ -24,9 +42,32 @@ Installed packages:
 
 
 
-Unpublished is above
+------------
 
 ----------------------------------
+
+[c-chromium-02]: https://github.com/chiv-in/devinf/compare/chromium-01...chromium-02
+[chromium-02]: https://github.com/chiv-in/devinf/packages/635370?version=chromium-02
+[docker/chromium/02]: https://github.com/chiv-in/devinf/tree/docker/chromium%2F02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
