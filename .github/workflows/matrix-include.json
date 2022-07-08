@@ -5,7 +5,7 @@
     "target-project": "devtools"
   }, {
     "git-tag-prefix": "refs/tags/docker/chromium-npm/",
-    "base-image-tag": "chromium-01",
+    "base-image-tag": "chromium-02",
     "target-project": "npm"
   }, {
     "git-tag-prefix": "refs/tags/docker/chromium-npm-devtools/",
