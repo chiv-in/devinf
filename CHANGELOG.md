@@ -13,6 +13,194 @@ Installed packages:
 Unpublished is above
 
 ----------------------------------
+### Based on `umputun/baseimage/app:v1.11.0` (`alpine:3.17`)
+The images below are based on [ghcr.io/umputun/baseimage/app:v1.11.0](https://github.com/umputun/baseimage/pkgs/container/baseimage%2Fapp/73603228?tag=v1.11.0) that is based on `alpine:3.17`.
+
+It has following packages installed:
+
+* su-exec (0.2-r**2**)
+* tzdata (202**3c-r0**)
+* curl **(8.4.0-r0)**
+* ca-certificates (202**30506-r0**)
+* **shared-mime-info (2.2-r2)**
+* dumb-init (1.2.5-**r2**)
+
+#### [docker/jdk17mvn-devtools/00]
+_(2021-06-21)_
+
+Image [jdk17mvn-00-devtools-00].
+
+Based on [jdk17mvn-00](#dockerjdk17mvn00).
+
+Installed packages:
+
+* sudo (1.9.**12_p2-r1**)
+* bash (5.**2.15-r0**)
+* rsync (3.2.**7-r0**)
+* git (2.**38.5-r0**)
+* jq (1.6-**r2**)
+* **yq (4.30.4-r4)**
+
+
+#### [docker/npm-devtools/02]
+_(2023-11-06)_
+
+Image [npm-02-devtools-02].
+
+Based on [npm-02](#dockernpm01).
+
+Installed packages: same as in [jkd17mvn-devtools-00](dockerjdk11mvn-devtools00)
+
+#### [docker/chromium-npm-jdk17mvn-devtools/00]
+_(2023-11-06)_
+
+Image [chromium-03-npm-03-jdk17mvn-00-devtools-00].
+
+Based on [chromium-03-npm-03-jdk17mvn-00](#dockerchromium-npm-jdk17mvn00).
+
+Installed packages: same as in [jkd17mvn-devtools-00](dockerjdk17mvn-devtools00)
+
+
+#### [docker/chromium-npm-jdk17mvn/00]
+_(2023-11-06)_
+
+Image [chromium-03-npm-03-jdk17mvn-00].
+
+Based on [chromium-03-npm-03](#dockerchromium-npm01).
+
+Installed packages: same as in [jkd17mvn-00](dockerjdk17mvn00)
+
+
+#### [docker/chromium-npm-devtools/02]
+_(2023-11-06)_
+
+Image [chromium-03-npm-03-devtools-02].
+
+Based on [chromium-03-npm-03](#dockerchromium-npm03)
+
+Installed packages: same as in [jkd17mvn-devtools-00](dockerjdk17mvn-devtools00)
+
+
+#### [docker/chromium-npm/03]
+_(2023-11-06)_
+
+Image [chromium-03-npm-03].
+
+Based on [chromium-03](#dockerchromium03)
+
+Installed packages: same as in [npm-02](#dockernpm02)
+
+
+#### [docker/npm/02]
+_(2023-11-06)_
+
+Image [npm-02].
+
+Installed packages:
+
+* nodejs (18.18.2-r0)
+* npm (9.1.2-r0)
+* yarn (1.22.19-r0)
+
+#### [docker/nodejs/02]
+_(2023-11-06)_
+
+Image [nodejs-02].
+
+Installed packages:
+
+* nodejs (18.18.2-r0)
+
+#### [docker/chromium/03]
+_(2023-11-06)_
+
+Image [chromium-03].
+
+Installed packages:
+
+* chromium (**112.0.5615.165-r0**)
+* font-noto (**23.7.1-r0**)
+* font-noto-emoji (**2.038-r0**)
+* freetype (2.**12.1-r0**)
+* freetype-dev (2.**12.1-r0**)
+* harfbuzz (**5.3.1-r1**)
+* font-freefont (20120503-**r3**)
+* nss (3.**85-r1**)
+
+
+#### [docker/jvm17/00]
+_(2023-11-06)_
+
+Image [jmv17-00].
+
+Installed packages:
+
+* java-common (0.5-r0)
+* java-cacerts (1.0-r1)
+* openjdk17-jre-headless (17.0.9_p8-r0)
+* openjdk17-jre (17.0.9_p8-r0)
+
+#### [docker/jdk17mvn/00]
+_(2023-11-06)_
+
+Image [jdk17mvn-00].
+
+Installed packages (among others):
+
+* java-common (0.5-r0)
+* java-cacerts (1.0-r1)
+* openjdk17-jre-headless (17.0.9_p8-r0)
+* openjdk17-jre (17.0.9_p8-r0)
+* openjdk17-jdk (17.0.9_p8-r0)
+* maven (3.8.6-r0)
+
+
+
+
+
+------------
+
+[jdk17mvn-00-devtools-00]: https://github.com/chiv-in/devinf/packages/635370?version=jdk17mvn-00-devtools-00
+[docker/jdk17mvn-devtools/00]: https://github.com/chiv-in/devinf/tree/docker/jdk17mvn-devtools%2F00
+
+
+[npm-02-devtools-02]: https://github.com/chiv-in/devinf/packages/635370?version=npm-02-devtools-02
+[docker/npm-devtools/02]: https://github.com/chiv-in/devinf/tree/docker/npm-devtools%2F02
+
+[chromium-03-npm-03-jdk17mvn-00-devtools-00]: https://github.com/chiv-in/devinf/packages/635370?version=chromium-03-npm-03-jdk17mvn-00-devtools-00
+[docker/chromium-npm-jdk17mvn-devtools/00]: https://github.com/chiv-in/devinf/tree/docker/chromium-npm-jdk17mvn-devtools%2F00
+
+[chromium-03-npm-03-jdk17mvn-00]: https://github.com/chiv-in/devinf/packages/635370?version=chromium-03-npm-03-jdk17mvn-00
+[docker/chromium-npm-jdk17mvn/00]: https://github.com/chiv-in/devinf/tree/docker/chromium-npm-jdk17mvn%2F00
+
+[chromium-03-npm-03-devtools-02]: https://github.com/chiv-in/devinf/packages/635370?version=chromium-03-npm-03-devtools-02
+[docker/chromium-npm-devtools/02]: https://github.com/chiv-in/devinf/tree/docker/chromium-npm-devtools%2F02
+
+[chromium-03-npm-03]: https://github.com/chiv-in/devinf/packages/635370?version=chromium-03-npm-03
+[docker/chromium-npm/03]: https://github.com/chiv-in/devinf/tree/docker/chromium-npm%2F03
+
+[npm-02]: https://github.com/chiv-in/devinf/packages/635370?version=npm-02
+[docker/npm/02]: https://github.com/chiv-in/devinf/tree/docker/npm%2F02
+
+[nodejs-02]: https://github.com/chiv-in/devinf/packages/635370?version=nodejs-02
+[docker/nodejs/02]: https://github.com/chiv-in/devinf/tree/docker/nodejs%2F02
+
+[chromium-03]: https://github.com/chiv-in/devinf/packages/635370?version=chromium-03
+[docker/chromium/03]: https://github.com/chiv-in/devinf/tree/docker/chromium%2F03
+
+[jvm17-00]: https://github.com/chiv-in/devinf/packages/635370?version=jvm17-00
+[docker/jvm11/01]: https://github.com/chiv-in/devinf/tree/docker/jvm17%2F00
+
+[jdk17mvn-00]: https://github.com/chiv-in/devinf/packages/635370?version=jdk17mvn-00
+[docker/jdk17mvn/00]: https://github.com/chiv-in/devinf/tree/docker/jdk17mvn%2F00
+
+
+
+
+
+
+
+
 ### Based on `umputun/baseimage/app:v1.9.2` (`alpine:3.15`)
 The images below are based on [ghcr.io/umputun/baseimage/app:v1.9.2](https://github.com/umputun/baseimage/pkgs/container/baseimage%2Fapp/25360859?tag=v1.9.2) that is based on `alpine:3.15`.
 
