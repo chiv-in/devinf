@@ -126,6 +126,7 @@ Installed packages:
 * harfbuzz (**5.3.1-r1**)
 * font-freefont (20120503-**r3**)
 * nss (3.**85-r1**)
+* font-wqy-zenhei (0.9.45-**r3**)
 
 
 #### [docker/jvm17/00]
