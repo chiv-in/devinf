@@ -5,15 +5,13 @@
 
 ### Image pieces
 
-There are tiny picese of images which I use trying to build combinations to
-download less.
-I'm trying to put big and rarely changed layers closer to base
-to have those laysers downloaded as rarely as possible to save time and network traffic.
+There are tiny pieces of images that I combine to build images. I try to get a result that lets me to download less. I put big and rarely changed layers closer to base
+in order to have those laysers downloaded as rarely as possible to save time and network traffic.
 
 #### Base
 
 I don't have own base image.
-I use [docker.pkg.github.com/umputun/baseimage/app:v1.9.2](https://github.com/umputun/baseimage/tree/v1.9.2/base.alpine).
+I use [ghcr.io/umputun/baseimage/app:v1.11.0](https://github.com/umputun/baseimage/tree/v1.11.0/base.alpine).
 That configures `app` user and enforces non-root execution by default.
 
 #### Dev Tools
@@ -34,14 +32,14 @@ that's why I put the image closer to end.
 
 | [chromium](docker/image-pieces/chromium/Dockerfile) | |
 | --- | --- |
-| **extracted** | 421 MB |
+| **extracted** | 344 MB |
 | **compressed** | 175 MB |
 
 
 Chromium with some necessary dependencies and fonts.
 I use it for automated testing.
 
-It's the heavies image that's why I put it to the beginning.
+It's the heavies image, that's why I put it to the beginning.
 I'm going to update this image as rarely as possible.
 
 #### NodeJS
@@ -60,7 +58,7 @@ NodeJS without NPM. Useful for prod images.
 | **extracted** | 54 MB |
 | **compressed** | 19 MB |
 
-NPM. I suppose it's rarely changed so it's good to keep it closer to the beginning
+NPM and Yarn. I suppose it's rarely changed so it's good to keep it closer to the beginning
 But it's not very big, that's why it gives the road to Chromium or Java.
 
 
@@ -116,7 +114,7 @@ are useful to develop Java projects and run tests.
 #### Chromium + NPM + JDK + Maven
 
 [chromium-npm-jdk11mvn](https://github.com/chiv-in/devinf/packages/635370?version=chromium-01-npm-01-jdk11mvn-01) and [chromium-npm-jdk11mvn-devtools](https://github.com/chiv-in/devinf/packages/635370?version=chromium-01-npm-01-jdk11mvn-01-devtools-01)
-are useful to develop Java projects which have frontent part that is built with NPM.
+are useful to develop Java projects which have frontend part that is built with NPM.
 
 
 

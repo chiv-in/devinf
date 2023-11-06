@@ -1,8 +1,7 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
 RUN \
-    apk add --no-cache --update \
-        openjdk11-jdk \
-        maven \
+    apk --no-cache --update add \
+        openjdk17-jre \
         && \
     rm -rf /var/cache/apk/*

@@ -10,7 +10,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - id: set-matrix
         run: |
@@ -26,7 +26,7 @@ jobs:
               )'\
             $MATRIX\
           )
-          echo ::set-output name=matrix::{\"include\":$(echo $matrix)}\"
+          echo "matrix={\"include\":$(echo $matrix)}" >> $GITHUB_OUTPUT
 
 
   build-chained-images:
@@ -41,7 +41,7 @@ jobs:
       matrix: ${{fromJson(needs.prepare-matrix.outputs.matrix)}}
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Show docker and docker-compose versions
         run: |
@@ -51,7 +51,7 @@ jobs:
       - name: Calculate environments
         run: |
           cat ./docker/image-pieces/ci.env >> $GITHUB_ENV
-          echo IMAGE_REPO=docker.pkg.github.com/$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
+          echo IMAGE_REPO=ghcr.io/$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
           echo IMAGE_TAG=$(./.github/workflows/docker-tag.sh ${{ github.ref }}) >> $GITHUB_ENV
           echo IMAGE_PUSH=${{ startsWith(github.ref, 'refs/tags/') }} >> $GITHUB_ENV
           cat $GITHUB_ENV
@@ -82,7 +82,7 @@ jobs:
 
       - name: Login to GitHub Packages Docker Registry
         run: |
-          docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+          docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build ${{matrix.target-project}} image ${{env.IMAGE}}
         run: |
