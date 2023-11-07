@@ -25,8 +25,15 @@ It has following packages installed:
 * **shared-mime-info (2.2-r2)**
 * dumb-init (1.2.5-**r2**)
 
+#### [docker/chiv-editorconfig-checker/00]
+_(2023-11-07)_
+
+Image [chiv-editorconfig-checker-00].
+
+Based on [nodejs-02](#dockernodejs02).
+
 #### [docker/jdk17mvn-devtools/00]
-_(2021-06-21)_
+_(2023-11-06)_
 
 Image [jdk17mvn-00-devtools-00].
 
@@ -160,6 +167,9 @@ Installed packages (among others):
 
 
 ------------
+
+[chiv-editorconfig-checker-00]: https://github.com/chiv-in/devinf/pkgs/container/devinf%2Fchiv-editorconfig-checker/144938368?tag=00
+[docker/chiv-editorconfig-checker/00]: https://github.com/chiv-in/devinf/tree/docker/chiv-editorconfig-checker%2F00/docker/images/chiv-editorconfig-checker/
 
 [jdk17mvn-00-devtools-00]: https://github.com/chiv-in/devinf/packages/635370?version=jdk17mvn-00-devtools-00
 [docker/jdk17mvn-devtools/00]: https://github.com/chiv-in/devinf/tree/docker/jdk17mvn-devtools%2F00
