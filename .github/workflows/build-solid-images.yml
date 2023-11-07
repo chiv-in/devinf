@@ -1,0 +1,48 @@
+name: Build solid docker images
+on:
+  push:
+    branches: ['**']
+    tags:
+      - 'docker/chiv-editorconfig-checker/**'
+
+jobs:
+  build-chiv-editorconfig-checker:
+    runs-on: ubuntu-latest
+    env:
+      TARGET_NAME: chiv-editorconfig-checker
+    if: ${{ startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/docker/chiv-editorconfig-checker/') }}
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Calculate environments
+        run: |
+          echo IMAGE_REPO=ghcr.io/$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
+          echo IMAGE_TAG=$(./.github/workflows/docker-tag.sh ${{ github.ref }}) >> $GITHUB_ENV
+          echo IMAGE_PUSH=${{ startsWith(github.ref, 'refs/tags/') }} >> $GITHUB_ENV
+          cat $GITHUB_ENV
+
+      - name: Calculate image full name
+        run: |
+          echo IMAGE=${{env.IMAGE_REPO}}/${TARGET_NAME}:${{env.IMAGE_TAG}} >> $GITHUB_ENV
+          cat $GITHUB_ENV
+
+      - name: Build ${{ env.TARGET_NAME }} docker image
+        run: |
+          docker build --rm \
+            -t "$IMAGE" \
+            "docker/images/$TARGET_NAME"
+
+      - name: Show layers of ${{env.IMAGE}}
+        run: |
+          docker history --no-trunc $IMAGE
+
+      - name: Login to GitHub Packages Docker Registry
+        if: ${{ env.IMAGE_PUSH == 'true' }}
+        run: |
+          docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push ${{env.TARGET_NAME}} image ${{env.IMAGE}}
+        if: ${{ env.IMAGE_PUSH == 'true' }}
+        run: |
+          docker push $IMAGE
