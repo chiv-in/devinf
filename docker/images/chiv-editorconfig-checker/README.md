@@ -1,6 +1,6 @@
-[ROOT](/README.md) / Editorconfig Evj Checker
+[Root readme](/README.md) / Chiv Editorconfig Checker
 
-# Editorconfig Evj Checker
+# Chiv Editorconfig Checker
 
 ## Description
 

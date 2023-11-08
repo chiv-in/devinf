@@ -25,6 +25,17 @@ It has following packages installed:
 * **shared-mime-info (2.2-r2)**
 * dumb-init (1.2.5-**r2**)
 
+#### [docker/chiv-editorconfig-checker/01]
+_(2023-11-09)_
+
+Image [chiv-editorconfig-checker-01].
+
+Based on [nodejs-02](#dockernodejs02).
+
+##### Changed
+Add "dist" and "out" folders to ignore list.
+
+
 #### [docker/chiv-editorconfig-checker/00]
 _(2023-11-07)_
 
@@ -167,6 +178,9 @@ Installed packages (among others):
 
 
 ------------
+[chiv-editorconfig-checker-01]: https://github.com/chiv-in/devinf/pkgs/container/devinf%2Fchiv-editorconfig-checker/144938368?tag=01
+[docker/chiv-editorconfig-checker/01]: https://github.com/chiv-in/devinf/tree/docker/chiv-editorconfig-checker%2F01/docker/images/chiv-editorconfig-checker/
+
 
 [chiv-editorconfig-checker-00]: https://github.com/chiv-in/devinf/pkgs/container/devinf%2Fchiv-editorconfig-checker/144938368?tag=00
 [docker/chiv-editorconfig-checker/00]: https://github.com/chiv-in/devinf/tree/docker/chiv-editorconfig-checker%2F00/docker/images/chiv-editorconfig-checker/

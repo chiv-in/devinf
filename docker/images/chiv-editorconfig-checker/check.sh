@@ -23,6 +23,8 @@ find . -type f \
 		-not -path '**/.next/**' \
 		-not -path '**/target/**' \
 		-not -path '**/.idea/**' \
+		-not -path '**/dist/**' \
+		-not -path '**/out/**' \
 		-not -path './.git/**' \
 		-not -path './mongo-dev-stuff/db/**' \
 		-exec grep -HnE $'[^#/-](\S| )\t+' {} \; \
