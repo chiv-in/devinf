@@ -19,12 +19,16 @@ find . -type f \
 		-not -name '*.iml' \
 		-not -name '*.png' \
 		-not -name '*.zip' \
+		-not -name 'gradlew' \
+		-not -name 'gradlew.bat' \
 		-not -path '**/node_modules/**' \
 		-not -path '**/.next/**' \
 		-not -path '**/target/**' \
 		-not -path '**/.idea/**' \
 		-not -path '**/dist/**' \
 		-not -path '**/out/**' \
+		-not -path '**/.gradle/**' \
+		-not -path '**/build/**' \
 		-not -path './.git/**' \
 		-not -path './mongo-dev-stuff/db/**' \
 		-exec grep -HnE $'[^#/-](\S| )\t+' {} \; \

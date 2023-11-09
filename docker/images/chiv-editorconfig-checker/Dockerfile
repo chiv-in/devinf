@@ -13,6 +13,6 @@ WORKDIR /app
 COPY --from=builder --chown="$APP_USER" /app /app
 ENV \
 	PROJECT_PATH=/project \
-	IGNORE='\.iml$|/(node_modules|\.next|target|\.idea|\.git|dist|out|mongo-dev-stuff/db)/'
+	IGNORE='(\.iml|gradlew|gradlew\.bat)$)|/(node_modules|\.next|target|\.idea|\.git|\.gradle|build|dist|out|mongo-dev-stuff/db)/'
 
 CMD ["/app/check.sh"]
