@@ -1,7 +1,7 @@
 {
   "chained" : [{
     "git-tag-prefix": "refs/tags/docker/npm-devtools/",
-    "base-image-tag": "npm-02",
+    "base-image-tag": "npm-03",
     "target-project": "devtools"
   }, {
     "git-tag-prefix": "refs/tags/docker/chromium-npm/",

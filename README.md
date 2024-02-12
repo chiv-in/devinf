@@ -11,15 +11,15 @@ in order to have those laysers downloaded as rarely as possible to save time and
 #### Base
 
 I don't have own base image.
-I use [ghcr.io/umputun/baseimage/app:v1.11.0](https://github.com/umputun/baseimage/tree/v1.11.0/base.alpine).
+I use [ghcr.io/umputun/baseimage/app:v1.12.0](https://github.com/umputun/baseimage/tree/v1.12.0/base.alpine).
 That configures `app` user and enforces non-root execution by default.
 
 #### Dev Tools
 
 | [devtools](docker/image-pieces/devtools/Dockerfile) | |
 | --- | --- |
-| **extracted** | 22 MB |
-| **compressed** | 10 MB |
+| **extracted** | 25 MB |
+| **compressed** | 10 MB (?) |
 
 Some tools that are usually good to have in a developer's environment
 including: _sudo, git, bash._
@@ -46,8 +46,8 @@ I'm going to update this image as rarely as possible.
 
 | [nodejs](docker/image-pieces/nodejs/Dockerfile) | |
 | --- | --- |
-| **extracted** | 51 MB |
-| **compressed** | 15 MB |
+| **extracted** | 50 MB |
+| **compressed** | 15 MB (?) |
 
 NodeJS without NPM. Useful for prod images.
 

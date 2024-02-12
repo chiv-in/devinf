@@ -13,12 +13,72 @@ Installed packages:
 Unpublished is above
 
 ----------------------------------
+### Based on `umputun/baseimage/app:v1.12.0` (`alpine:3.19`)
+The images below are based on [ghcr.io/umputun/baseimage/app:v1.12.0](https://github.com/umputun/baseimage/pkgs/container/baseimage%2Fapp/163505483?tag=v1.12.0) that is based on `alpine:3.19`.
+
+It has following packages installed:
+
+* su-exec (0.2-**r3**)
+* tzdata (2023**d-r0**)
+* curl (8.**5.0-r0**)
+* ca-certificates (20230506-r0)
+* shared-mime-info (2.**4-r0**)
+* dumb-init (1.2.5-**r3**)
+
+#### [docker/npm-devtools/03]
+_(2024-02-12)_
+
+Image [npm-03-devtools-03].
+
+Based on [npm-03](#dockernpm03).
+
+Installed packages:
+
+* sudo (1.9.**15_p2-r0**)
+* bash (5.2.**21-r0**)
+* rsync (3.2.7-**r4**)
+* git (2.**43.0-r0**)
+* jq (1.**7.1-r0**)
+* yq (4.**35.2-r1**)
+
+#### [docker/npm/03]
+_(2024-02-12)_
+
+Image [npm-03].
+
+Installed packages:
+
+* nodejs **(20.11.0-r0)**
+* npm **(10.2.5-r0)**
+* yarn (1.22.19-r0)
+
+#### [docker/nodejs/03]
+_(2024-02-12)_
+
+Image [nodejs-03].
+
+Installed packages:
+
+* nodejs **(20.11.0-r0)**
+
+
+------------
+[npm-03-devtools-03]: https://github.com/chiv-in/devinf/packages/635370?version=npm-03-devtools-03
+[docker/npm-devtools/03]: https://github.com/chiv-in/devinf/tree/docker/npm-devtools%2F03
+
+[npm-03]: https://github.com/chiv-in/devinf/packages/635370?version=npm-03
+[docker/npm/03]: https://github.com/chiv-in/devinf/tree/docker/npm%2F03
+
+[nodejs-03]: https://github.com/chiv-in/devinf/packages/635370?version=nodejs-03
+[docker/nodejs/03]: https://github.com/chiv-in/devinf/tree/docker/nodejs%2F03
+
+
 ### Based on `umputun/baseimage/app:v1.11.0` (`alpine:3.17`)
 The images below are based on [ghcr.io/umputun/baseimage/app:v1.11.0](https://github.com/umputun/baseimage/pkgs/container/baseimage%2Fapp/73603228?tag=v1.11.0) that is based on `alpine:3.17`.
 
 It has following packages installed:
 
-* su-exec (0.2-r**2**)
+* su-exec (0.2-**r2**)
 * tzdata (202**3c-r0**)
 * curl **(8.4.0-r0)**
 * ca-certificates (202**30506-r0**)
@@ -214,7 +274,7 @@ Installed packages (among others):
 [docker/chromium/03]: https://github.com/chiv-in/devinf/tree/docker/chromium%2F03
 
 [jvm17-00]: https://github.com/chiv-in/devinf/packages/635370?version=jvm17-00
-[docker/jvm11/01]: https://github.com/chiv-in/devinf/tree/docker/jvm17%2F00
+[docker/jvm17/00]: https://github.com/chiv-in/devinf/tree/docker/jvm17%2F00
 
 [jdk17mvn-00]: https://github.com/chiv-in/devinf/packages/635370?version=jdk17mvn-00
 [docker/jdk17mvn/00]: https://github.com/chiv-in/devinf/tree/docker/jdk17mvn%2F00
